@@ -2,37 +2,52 @@
 
 // Create a variable called 'myName' that's value is your name
 
-// Code here
+let myName = "neaj mahmud"
 
 //////////////////PROBLEM 2////////////////////
 
 // Create a variable called 'faveNum' that's value is your favorite number
 
-//Code here
+let faveNum = 5
 
 //////////////////PROBLEM 3////////////////////
 
 // Create a variable called 'lovesCode' and set it to true
 
-//Code here
+let lovesCode = true
 
 //////////////////PROBLEM 4////////////////////
 
 // Create a function called 'sum' that takes in two parameters, num1 and num2, and returns the sum of those two parameters.
 
-//Code here
+function sum(num1, num2) {
+	return num1+ num2
+	
+}
 
 //////////////////PROBLEM 5////////////////////
 
 // Create a function called 'lovesCodeChecker' that takes in a single parameter called x. Check to see if x is equal to true. If it is, return true as a boolean. If x does not equal true, return false as a boolean
 
-//Code here
-
+function lovesCodeChecker(x) {
+	if(x === x){
+		true
+	} else {
+		false
+	}
+	return x
+}
+ 
 //////////////////PROBLEM 6////////////////////
 
 // Create a function called 'oddChecker' that takes in one parameter, num. Check to see if the number is even or odd. If it is odd, return 'the number is odd' or return 'the number is even' if it is even.
 
-//Code here
+function oddChecker(num) {
+	if(num % 2 === 0){
+		return "the number is even"
+	}
+	return "the number is odd"
+}
 
 //////////////////PROBLEM 7////////////////////
 
@@ -40,43 +55,71 @@
 
 //Code Here
 
-//////////////////PROBLEM 8////////////////////
+function iLove(name, love) {
+	return `${name} loves ${love}`
+}
 
 // Create a copy of the faveColors array called 'colorCopy' using slice
 const faveColors = ['red', 'green', 'black']
 
-//Code Here
+let colorCopy = [...faveColors]
 
 //////////////////PROBLEM 9////////////////////
 
 // Add a fourth color to the end of the 'colorCopy' array using push
 
-//Code Here
+colorCopy.push("white")
 
 //////////////////PROBLEM 10////////////////////
 
 // Create a new array called 'middleNums' from the numbers array that will capture only the middle numbers (2, 3, 4).
 const numbers = [1, 2, 3, 4, 5]
 
-//Code Here
+let middleNums = numbers.slice(1,4)
 
 //////////////////PROBLEM 11////////////////////
 
 // Create an object called 'me' that has these keys with the correct values: firstName, state, age, greeter. firstName will be your name as a string. state will be your current state or providence as a string. age will be your age as a number. greeter will be a method that returns the string 'Hello! My name is NAMEVALUE and I live in STATEVALUE' with the correct values
 
-//Code Here
+let me = {
+	firstName: "neaj",
+	age : 30,
+	state: "TX",
+	greeter: function () {
+		`My name is ${this.firstName} and I live in ${this.state}`
+
+		
+	}
+}
 
 //////////////////PROBLEM 12////////////////////
 
 // Create a function called 'bigOrSmall' that takes in one parameter, arr. Create a new array inside of bigOrSmall called 'answers'. Loop over the passed in arr param. If the number is GREATER than 100, push 'big' as a string to the answers array. If the number is LESS than or EQUAL to 100, push 'small' as a string to the answers array. Return the answers array inside of the function
 
-// Code here
+function bigOrSmall(arr) {
+	let answers = []
+	for(let i = 0; i <arr.length; i++ ){
+		if ( arr[i] > 100){
+			answers.push("big")
+		} else if ( arr[i] <= 100 ){
+			answers.push("small")
+		}
+
+		
+	}
+
+	return answers
+}
 
 //////////////////PROBLEM 13////////////////////
 
 // Create a function called 'arrayReverser' that takes in one parameter, arr. Inside of arrayReverser, create an empty array called 'reversed'. Using a for loop, loop over the passed in array in reverse and add each item to the new reversed array. Finally, return the new reversed array
 
-//Code Here
+function arrayReverser(arr) {
+	
+	let reversed = arr.reverse()
+	return reversed
+}
 
 //////////////////PROBLEM 14 - 18 Setup////////////////////
 
@@ -84,36 +127,59 @@ const numbers = [1, 2, 3, 4, 5]
 const myNumbers = [3, 55, 788, 2, 1]
 
 
+
 //////////////////PROBLEM 14////////////////////
 
 // First, with an arrow function let's use .map to create a new array that doubles each number. Call the new array 'doubled'
 
-// Code Here
+let doubled = myNumbers.map(function (d) {
+	return d * 2
+
+	
+}) 
 
 //////////////////PROBLEM 15////////////////////
 
 // Now lets use .filter and an arrow function to only get the nubmer(s) greater than 100. Use an arrow function and call the new array 'filtered'
 
-// Code Here
+let filtered  = myNumbers.filter(function (f) {
+	return f > 100
+	
+})
 
 //////////////////PROBLEM 16////////////////////
 
 // Next up, reduce. Use .reduce and an arrow function to get the total of the array. call the new array 'total' and use an arrow function
 
-// Code Here
+let total = myNumbers.reduce(function (acc, t) {
+	return acc + t
+	
+})
 
 //////////////////PROBLEM 17////////////////////
 
 // Last, lets use .forEach to find the index of each item in the array. First, create an empty array called myNumbersIndex. Next, using forEach, push each items index from the myNumbers array to the myNumbersIndex array
+ let myNumbersIndex = []
+  
+	myNumbers.forEach(function(a,b) {
+		return myNumbersIndex .push(b)
 
-// Code Here
+		
+	})	  
+  
+
+
+
 
 //////////////////PROBLEM 18////////////////////
 
 // Did you know that George Foreman has five sons named George? Let's go ahead and change everyone's name in the notGeorge array to George using .map and an arrow function. Call the new array 'forTheLoveOfGeorge'
 const notGeorge = ['Louis', 'Ted', 'Bill', 'Sharon', 'Mark', 'Angela']
 
-// Code Here
+let forTheLoveOfGeorge = notGeorge.map(function (g) {
+	return g = "George"
+	
+})
 
 //////////////////PROBLEM 19////////////////////
 
@@ -127,10 +193,16 @@ const people = [
 	{ name: 'George', friend: true, awesomeLevel: 7 }
 ]
 
-// Code Here
+let enemies = people.filter(function (e) {
+	return e.friend === false
+})
 
 //////////////////PROBLEM 20////////////////////
 
 // Using the people array above, let's get a total of the awesomeLevel from all the people. Call the new array 'totallyAwesome'. Use .reduce and an arrow function
 
-// Code Here
+
+let totallyAwesome = people.reduce(function (acc, t) {
+	return acc + t.awesomeLevel
+	
+},0)
